@@ -4,7 +4,7 @@ import subprocess
 from influxdb import DataFrameClient
 
 
-# this function pipes data from terminal and feeds it to InfluxDB
+# This function pipes data from terminal and feeds it to InfluxDB
 def main(host='localhost', port=8086):
     user = 'root'
     password = 'root'
