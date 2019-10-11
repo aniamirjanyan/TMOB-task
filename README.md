@@ -43,6 +43,24 @@ $ python -m pip install pandas
 $ sudo apt-get install xsel
 $ sudo apt-get install python-influxdb
 ```
-In order to install pyperclip, visit (https://inventwithpython.com/pyperclip.py), download it into the python directory.
+In order to install pyperclip, visit https://inventwithpython.com/pyperclip.py, download it into the python directory.
 
 **2. Code**
+
+Open terminal and run this command to make sure it has outcome.
+```
+$ ps -eo user,%mem,%cpu,start
+```
+Download the py file from GitHub and run it from terminal.
+```
+$ python <path>/<file_name.py>
+```
+Enter InfluxDB and check if the database is created and is not empty.
+```
+$ influx
+> show databases
+> use <dbname>
+> select * from <dbname> 
+```
+
+**3. Visualization**
