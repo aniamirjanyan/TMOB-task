@@ -66,6 +66,7 @@ $ influx
 **3. Visualization**
 
 * Grafana Login
+
 In order to login into Grafana you should open your browser and type the following
 ```
 localhost:3000
