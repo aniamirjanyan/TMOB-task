@@ -64,3 +64,33 @@ $ influx
 ```
 
 **3. Visualization**
+
+* Grafana Login
+In order to login into Grafana you should open your browser and type the following
+```
+localhost:3000
+```
+* Create your first data source 
+
+In the Home page of Grafana you we will see ‘’Create your first data source’’ section. Open it and from the list of ‘’Time Series Databases’’ select InfluxDB. 
+
+* Data Source/InfluxDB Settings
+
+Selecting InfluxDB will open settings section, where you should write a “Name” of Data Source, first row in the settings. In HTTP URL section, put the same URL as written in a sample. In InfluxDB Details section fill “Database Name”, “User”, “Password” fields.
+
+* Save & Test
+
+Lastly click on the  “Save & Test” button. 
+In case of successful entry you will get a confirmation that “Data Source is working”.
+
+* Create Dashboard
+
+From the left side of the screen you can find “+” sign, click on it and select “Create”, “Dashboard”, ”Add Query”
+
+* Query
+
+In the “Query” section select Data Source name that you have written and add query that you want to display on the dashboard. 
+E.g.
+```
+SELECT count("%CPU") FROM "db6" WHERE ("USER" = 'root') AND $timeFilter GROUP BY time($__interval) fill(null)
+```
