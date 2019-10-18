@@ -1,24 +1,24 @@
-**STEP BY STEP GUIDE FOR PC(LINUX) PROCESS MONITORING**
+**STEP BY STEP GUIDE FOR PC PROCESS MONITORING**
 
 **1. Installation**
 
 Firstly, run these commands in terminal
 ```
-sudo get-apt update
-sudo get-apt upgrade
+sudo yum update
+sudo yum upgrade
 ```
 
-* InfluxDB Installation
+* InfluxDB Installation (https://docs.influxdata.com/influxdb/v1.7/introduction/installation/)
 ```
-$ wget https://dl.influxdata.com/influxdb/releases/influxdb_1.7.8_amd64.deb
-$ sudo dpkg -i influxdb_1.7.8_amd64.deb
-$ sudo apt-get install influxdb
+$ wget https://dl.influxdata.com/influxdb/releases/influxdb-1.7.8.x86_64.rpm
+$ sudo yum localinstall influxdb-1.7.8.x86_64.rpm
+$ sudo yum install influxdb
 $ sudo service influxdb start
 ```
 * Grafana Installation 
 ```
-$ wget https://dl.grafana.com/oss/release/grafana_6.4.2_amd64.deb
-$ sudo dpkg -i grafana_6.4.2_amd64.deb
+$ sudo yum install https://grafanarel.s3.amazonaws.com/builds/grafana-3.1.1-1470047149.x86_64.rpm
+$ sudo yum install grafana
 $ sudo service grafana-server start
 ```
 * Python Installation
