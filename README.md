@@ -23,15 +23,6 @@ $ sudo yum install <rpm package url>
 $ sudo service grafana-server start
 ```
 
-* Python Packages Installation (needed for code)
-
-Install pip3 and the following packages
-```
-$ sudo yum install python3-pip
-$ pip3 install subprocess.run
-$ sudo yum install python-influxdb
-```
-
 **2. Code**
 
 Run the py file from terminal.
@@ -42,15 +33,15 @@ Enter InfluxDB and check if the database is created and is not empty.
 ```
 $ influx
 > show databases
-> use <dbname>
-> select * from <measurement> 
+> use db                          # database name is declared in the code
+> select * from <cpu_mem>         # measurement name is declared in the code
 ```
 
 **3. Visualization**
 
 * Grafana Login
 
-In order to login into Grafana you should open your browser and type the following
+In order to login into Grafana you should open your browser and type the following (in case of using grafana on another server use ipaddress:3000)
 ```
 localhost:3000
 ```
@@ -63,11 +54,11 @@ In the Home page of Grafana you we will see **Create your first data source** se
 Selecting InfluxDB will open settings section. Fill in the following
 Name = /any name/,
 HTTP URL = http://localhost:8086,
-Database = /database name/,
+Database = db (database name is declared in the code),
 User = root,
 Password = root,
 HTTP Method = GET
-Min time interval = 5s
+Min time interval = 5s (do not forget the 's')
 
 Leave other boxes as default and click on the **Save and Test** button. In case of successful entry you will get a confirmation that “Data Source is working”.
 
