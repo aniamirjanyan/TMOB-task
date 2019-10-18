@@ -37,13 +37,9 @@ sudo apt-get install python-pip
 ```
 Afterwards, install the following 
 ```
-$ pip install subprocess.run
-$ sudo apt-get install python3-pandas
-$ python -m pip install pandas
-$ sudo apt-get install xsel
+$ pip3 install subprocess.run
 $ sudo apt-get install python-influxdb
 ```
-In order to install pyperclip, visit https://inventwithpython.com/pyperclip.py, download it into the python directory.
 
 **2. Code**
 
@@ -60,7 +56,7 @@ Enter InfluxDB and check if the database is created and is not empty.
 $ influx
 > show databases
 > use <dbname>
-> select * from <dbname> 
+> select * from <measurement> 
 ```
 
 **3. Visualization**
@@ -93,5 +89,5 @@ From the left side of the screen you can find “+” sign, click on it and sele
 In the “Query” section select Data Source name that you have written and add query that you want to display on the dashboard. 
 E.g.
 ```
-SELECT count("%CPU") FROM "db6" WHERE ("USER" = 'root') AND $timeFilter GROUP BY time($__interval) fill(null)
+SELECT "%MEM" FROM "cpu_mem" WHERE ("USER" = 'root') AND $timeFilter
 ```
