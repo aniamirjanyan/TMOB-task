@@ -56,29 +56,28 @@ localhost:3000
 ```
 * Create your first data source 
 
-In the Home page of Grafana you we will see ‘’Create your first data source’’ section. Open it and from the list of ‘’Time Series Databases’’ select InfluxDB. 
+In the Home page of Grafana you we will see ‘’Create your first data source’’ section. Open it and from the list of **Time Series Databases** select **InfluxDB**. 
 
 * Data Source/InfluxDB Settings
 
 Selecting InfluxDB will open settings section. Fill in the following
-Name = <any name for the data source>
-HTTP URL = http://localhost:8086
-Database = <database name>
-User = root
-Password = root
+Name = <any name for the data source>,
+HTTP URL = http://localhost:8086,
+Database = <database name>,
+User = root,
+Password = root,
 HTTP Method = GET
 
-leave other boxes as default and click on the "Save and Test" button.
-
-In case of successful entry you will get a confirmation that “Data Source is working”.
+Leave other boxes as default and click on the **Save and Test** button. In case of successful entry you will get a confirmation that “Data Source is working”.
 
 * Create Dashboard
 
-From the left side of the screen you can find “+” sign, click on it and select “Create”, “Dashboard”, ”Add Query”
+From the left side of the screen you can find **+** sign, click on it and then click on **Add Query**.
 
 * Query
 
-In the “Query” section select Data Source name that you have written and add query that you want to display on the dashboard. 
+In the **Query** section select Data Source Name.  
+Click on**Add Query**(on right). In order to manually enter the query click on the pencil button on the right and type the query. 
 E.g.
 ```
 SELECT "%MEM" FROM "cpu_mem" WHERE ("USER" = 'root') AND $timeFilter
