@@ -82,4 +82,6 @@ Click on**Add Query**(on right). In order to manually enter the query click on t
 ```
 SELECT "%MEM" FROM "cpu_mem" WHERE ("USER" = 'root') AND $timeFilter
 ```
-Or build the prefered query by selecting the values. 
+Or build the prefered query by selecting the values as shown in the image
+
+![Image][https://ibb.co/ZxGkkpH]
