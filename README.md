@@ -15,41 +15,28 @@ $ sudo yum localinstall influxdb-1.7.8.x86_64.rpm
 $ sudo yum install influxdb
 $ sudo service influxdb start
 ```
-* Grafana Installation 
+* Grafana Installation (https://grafana.com/docs/installation/rpm/)
 ```
-$ sudo yum install https://grafanarel.s3.amazonaws.com/builds/grafana-3.1.1-1470047149.x86_64.rpm
-$ sudo yum install grafana
+$ wget https://dl.grafana.com/oss/release/grafana-6.4.3-1.x86_64.rpm
+$ sudo yum localinstall grafana-6.4.3-1.x86_64.rpm
+$ sudo yum install <rpm package url>
 $ sudo service grafana-server start
 ```
-* Python Installation
-```
-# check the version of python 
-$ python3 --version
-# if there is no python installed, run the following command 
-$ sudo apt-get install python3.6
-```
+
 * Python Packages Installation (needed for code)
 
-Install pip and pip 3, which will help to install other packages
+Install pip3 and the following packages
 ```
 sudo apt-get install python3-pip
-sudo apt-get install python-pip
-```
-Afterwards, install the following 
-```
 $ pip3 install subprocess.run
-$ sudo apt-get install python-influxdb
+$ sudo yum install python-influxdb
 ```
 
 **2. Code**
 
-Open terminal and run this command to make sure it has outcome.
+Run the py file from terminal.
 ```
-$ ps -eo user,%mem,%cpu,start
-```
-Download the py file from GitHub and run it from terminal.
-```
-$ python <path>/<file_name.py>
+$ python3 <path>/<file_name.py>
 ```
 Enter InfluxDB and check if the database is created and is not empty.
 ```
@@ -73,11 +60,16 @@ In the Home page of Grafana you we will see ‘’Create your first data source�
 
 * Data Source/InfluxDB Settings
 
-Selecting InfluxDB will open settings section, where you should write a “Name” of Data Source, first row in the settings. In HTTP URL section, put the same URL as written in a sample. In InfluxDB Details section fill “Database Name”, “User”, “Password” fields.
+Selecting InfluxDB will open settings section. Fill in the following
+Name = <any name for the data source>
+HTTP URL = http://localhost:8086
+Database = <database name>
+User = root
+Password = root
+HTTP Method = GET
 
-* Save & Test
+leave other boxes as default and click on the "Save and Test" button.
 
-Lastly click on the  “Save & Test” button. 
 In case of successful entry you will get a confirmation that “Data Source is working”.
 
 * Create Dashboard
