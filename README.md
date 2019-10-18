@@ -78,7 +78,7 @@ From the left side of the screen you can find **+** sign, click on it and then c
 * Query
 
 In the **Query** section select Data Source Name.  
-Click on**Add Query**(on right). In order to manually enter the query click on the pencil button on the right and type the query. E.g.
+Click on**Add Query**(on right). In order to manually enter the query click on the edit button (pencil) on the right and type the query. E.g.
 ```
 SELECT "%MEM" FROM "cpu_mem" WHERE ("USER" = 'root') AND $timeFilter
 ```
