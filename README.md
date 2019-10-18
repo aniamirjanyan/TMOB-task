@@ -84,4 +84,4 @@ SELECT "%MEM" FROM "cpu_mem" WHERE ("USER" = 'root') AND $timeFilter
 ```
 Or build the prefered query by selecting the values as shown in the image
 
-![Image][https://ibb.co/ZxGkkpH]
+![Image](https://ibb.co/ZxGkkpH)
