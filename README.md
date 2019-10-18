@@ -27,7 +27,7 @@ $ sudo service grafana-server start
 
 Install pip3 and the following packages
 ```
-sudo apt-get install python3-pip
+$ sudo yum install python3-pip
 $ pip3 install subprocess.run
 $ sudo yum install python-influxdb
 ```
