@@ -67,6 +67,7 @@ Database = /database name/,
 User = root,
 Password = root,
 HTTP Method = GET
+Min time interval = 5s
 
 Leave other boxes as default and click on the **Save and Test** button. In case of successful entry you will get a confirmation that “Data Source is working”.
 
