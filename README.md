@@ -33,30 +33,39 @@ Enter InfluxDB and check if the database is created and is not empty.
 ```
 $ influx
 > show databases
-> use db                          # database name is declared in the code
-> select * from <cpu_mem>         # measurement name is declared in the code
+> use <database name>                  # database name is declared in the code
+> select * from <measurements>         # measurement name is declared in the code
 ```
 
 **3. Visualization**
 
 * Grafana Login
 
-In order to login into Grafana you should open your browser and type the following (in case of using grafana on another server use ipaddress:3000)
+In order to login into Grafana you should open your browser and type the following 
 ```
 localhost:3000
 ```
+in case of using grafana on another server use 
+```
+ipaddress:3000
+```
+The default username and password for grafana is the following  
+username: admin
+password: admin  
+(after logging in it will be required to change the password)
+
 * Create your first data source 
 
 In the Home page of Grafana you we will see **Create your first data source** section. Open it and from the list of **Time Series Databases** select **InfluxDB**. 
 
 * Data Source/InfluxDB Settings
 
-Selecting InfluxDB will open settings section. Fill in the following
+Selecting InfluxDB will open settings section. Fill in the following:
 Name = /any name/,
 HTTP URL = http://localhost:8086,
-Database = db (database name is declared in the code),
-User = root,
-Password = root,
+Database = /database name/ (database name is declared in the code),
+User = /username declared in code/,
+Password = /password declared in code/,
 HTTP Method = GET
 Min time interval = 5s (do not forget the 's')
 
@@ -69,10 +78,12 @@ From the left side of the screen you can find **+** sign, click on it and then c
 * Query
 
 In the **Query** section select Data Source Name.  
-Click on**Add Query**(on right). In order to manually enter the query click on the edit button (pencil) on the right and type the query. E.g.
+Click on **Add Query** (on the right). In order to manually enter the query click on the edit button (pencil) on the right and type the query. E.g.
 ```
 SELECT "%MEM" FROM "cpu_mem" WHERE ("USER" = 'root') AND $timeFilter
 ```
 Or build the prefered query by selecting the values as shown in the image
 
 ![](https://i.imgur.com/RVQ9DYz.png)
+
+You can add multiple queries with different users or values. 
