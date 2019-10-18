@@ -91,3 +91,4 @@ E.g.
 ```
 SELECT "%MEM" FROM "cpu_mem" WHERE ("USER" = 'root') AND $timeFilter
 ```
+Or build the prefered query by selecting the values. 
